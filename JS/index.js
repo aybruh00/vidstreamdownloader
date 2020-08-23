@@ -31,7 +31,7 @@ if(process.argv.length <= 2) {
     })
 
     const sites = sources.readSourcesFrom(__dirname + '/sites');
-
+    const fs=require('fs') 
     if(argsObj.lsc) {
         console.log(`Sources:\n\n${sites.map(site => `${Object.keys(site.data).map(key => `${key === 'name' ? '- ' : '\t'+key.charAt(0).toUpperCase() + key.slice(1)+': '}${site.data[key]}`).join('\n')}`).join('\n\n')}`)
         return;
